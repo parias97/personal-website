@@ -19,8 +19,18 @@ body {
     background-color: #0a192f;
 }
 
+/* Make h1's slight larger than the regular font size */
+h1 {
+    font-size:1.5rem;
+}
+
 .jumbotron{
     background-color: #172a45;
+}
+
+/* Make h1 elements in the jumbotron double the regular font size */
+.jumbotron h1 {
+    font-size: 2rem;
 }
 
 section {
