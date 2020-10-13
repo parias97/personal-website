@@ -1,0 +1,175 @@
+<!--
+      Name: Peter Arias
+      Email: peter_arias@student.uml.edu
+      Affiliation: Student at UMass Lowell in 91.61 GUI Programming I
+      Date: 10/12/2020
+      Description: Update homework 2 by using Bootstrap
+      91.461 Assignment: Bootstrap
+-->
+
+<!-- Using starting template from: https://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <!-- Specifies the character set for the page -->
+    <meta charset="utf-8">
+    <!-- Description of website -->
+    <meta name="description" content="Assignment index by Peter Arias">
+
+    <!-- Scales web page based on browser size. Source: w3schools -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+    <!-- Page document title -->
+    <title>Peter Arias</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Link to external CSS. -->
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- Linked stylesheet for icons. -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  </head>
+
+  <!-- Contains the page content -->
+  <body>
+    <!-- Navbar with logo and social media links. 
+         Source: https://getbootstrap.com/docs/4.0/components/navbar/ -->
+    <nav class="navbar navbar-expand-sm bg-nb navbar-dark">
+      <a class="navbar-brand" href="./">
+        <img src="./images/logo.png" alt="logo" class="navbar-brand">
+      </a>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/parias97" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://linkedin.com/in/peterarias" target="_blank">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Jumbotron extends entire viewport to display a heading. -->
+    <!-- Source: https://getbootstrap.com/docs/3.4/components/#jumbotron-->
+    <div class="jumbotron jumbotron-fluid text-center bg-nb">
+      <div class="container">
+        <h1>Hi, my name is Peter Arias! <i class="far fa-hand-spock fa-lg"></i> </h1>
+      </div>
+    </div>
+
+    <!-- About me section. -->
+    <section>
+      <div class="container">
+        <h1>About Me</h1>
+        <hr class="color-mint">
+        <!-- This row aligns text alongside an image. -->
+            <div class="row">
+              <div class="col-md-4">
+                <!-- Make the image responsive and display as a centered block. 
+                  For screens smaller than medium devices, display the image centered in the row and the text below it. 
+                  Source: https://getbootstrap.com/docs/4.0/utilities/display/ -->
+                <img src="./images/me.jpg" alt="me" class=".img-responsive d-block mx-auto rounded mr-4 mb-2" width="200px">
+              </div>
+              <div class="col-md-8 align-self-center">
+                <p>I'm a senior year Computer Science major, anticipitating to graduate in May 2021.
+                  Lately, I've been taking courses relating to different areas in Computer Science to
+                  expand my horizons and experience different areas. A couple of these courses include:
+                  Mobile & Sensor Computing, GUI I, and Database I. This page serves as an index to all
+                  my assignments in my Graphical User Interface course. This webpage will be updated as
+                  I learn new material.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Homework Assignments section. -->
+    <section class="hw-section">
+      <div class="container">
+        <h1>Homework Assignments</h1>
+        <hr class="color-mint">
+        <!-- Using card columns to display homework assignments. -->
+        <!-- Source: https://www.w3schools.com/bootstrap4/bootstrap_cards.asp -->
+        <div class="card-columns">
+          <div class="card">
+            <div class="card-body text-center">
+              <p class="card-text">Homework 1</p>
+            </div>
+          </div>
+          <div class="card">
+            <a href="https://cs.uml.edu/~parias/hw2" target="_blank">
+              <div class="card-body text-center">
+                <p class="card-text">Homework 2</p>
+              </div>
+            </a>
+          </div>
+          <div class="card">
+            <a href="https://cs.uml.edu/~parias/hw3" target="_blank">
+              <div class="card-body text-center">
+                <p class="card-text">Homework 3</p>
+              </div>
+            </a>
+          </div>
+          <div class="card">
+            <a href="https://cs.uml.edu/~parias/" target="_blank">
+              <div class="card-body text-center">
+                <p class="card-text">Homework 4</p>
+              </div>
+            </a>
+          </div>
+          <div class="card">
+            <a href="https://cs.uml.edu/~parias" target="_blank">
+              <div class="card-body text-center">
+                <p class="card-text">Homework 5</p>
+              </div>
+            </a>
+          </div>
+          <div class="card">
+            <a href="#">
+              <div class="card-body text-center" >
+                <p class="card-text">Homework 6</p>
+              </div>
+            </a>
+          </div>
+          <div class="card">
+            <a href="#">
+              <div class="card-body text-center">
+                <p class="card-text">Homework 7</p>
+              </div>
+            </a>
+          </div>
+          <div class="card">
+            <a href="#">
+              <div class="card-body text-center">
+                <p class="card-text">Homework 8</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="page-footer font-small mt-5">
+      <div class="container text-center">
+        <p>Designed and built by Peter Arias</p>
+      </div>
+    </footer>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"></script>
+  </body>
+</html>
