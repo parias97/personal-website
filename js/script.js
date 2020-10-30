@@ -163,7 +163,7 @@ function validateForm(){
     if(swapped){
         document.getElementById("alertMessage").style.display = "block";
         document.getElementById("alertMessage").innerHTML = 
-            "Swapped input values to meet fulfill requirements";
+            "Swapped input values to fulfill requirements";
     }
 
     // If no input errors are detected, create the table.
