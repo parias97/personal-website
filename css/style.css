@@ -3,23 +3,25 @@
       Email: peter_arias@student.uml.edu
       Affiliation: Student at UMass Lowell in 91.61 GUI Programming I
       Date: 10/13/2020
-      Description: Update homework 2 by using Bootstrap
-      91.461 Assignment: Bootstrap
+      Description: Creating an Interactive Dynamic Table
+      91.461 Assignment: Assignment No. 5
+      Last modified: 10/29/20
 */
 
 * {
     color: white;
 }
 
-body {
+body, html {
     background-color: #0a192f;
+    height: 100%
 }
 
 .bg-nb{
     background-color: #0a192f;
 }
 
-/* Make h1's slight larger than the regular font size */
+/* Make h1's slight larger than the regular font size. */
 h1 {
     font-size:1.5rem;
 }
@@ -28,7 +30,7 @@ h1 {
     background-color: #172a45;
 }
 
-/* Make h1 elements in the jumbotron double the regular font size */
+/* Make h1 elements in the jumbotron double the regular font size. */
 .jumbotron h1 {
     font-size: 2rem;
 }
@@ -63,13 +65,39 @@ nav i {
     text-decoration: none;
 }
 
-/* Lowers opacity to 50% when hovering over a card */
+/* Lowers opacity to 50% when hovering over a card. */
 .hw-section .card:hover{
     opacity: 0.5;
 }
 
-/* Lowers opacity to 50% when hovering over a navbar fab icon */
+/* Lowers opacity to 50% when hovering over a navbar fab icon. */
 .nav-item .fab:hover {
     opacity: 0.5;
 }
 
+#inputForm label {
+    float: right;
+}
+
+/* Allow the ability to scroll if the multiplication table exceeds document size. */
+#multTable {
+    overflow: scroll;
+}
+
+/* Styles the products */
+#multTable tbody > tr > td:not(:first-child) {
+    background-color: #172a45;
+    border: solid 2px #64ffda;
+    padding: 10px;
+}
+
+/* Styles the table header (multiplicands) and the first element of each row (multiplier). */
+#multTable thead > tr > th, tbody > tr > th{
+    background-color: #64ffda;
+    color: black;
+    padding: 10px;
+}
+
+#alertMessage {
+    display: none;
+}
