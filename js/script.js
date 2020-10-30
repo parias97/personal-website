@@ -7,8 +7,8 @@
       91.461 Assignment: Assignment No. 5
 */
 
-const formRef = document.forms.inputForm
-const elStartMultiplier = formRef.elements.startMultiplier
+const formRef = document.forms.inputForm;
+const elStartMultiplier = formRef.elements.startMultiplier;
 const elEndMultiplier = formRef.elements.endMultiplier;
 const elStartMultiplicand = formRef.elements.startMultiplicand;
 const elEndMultiplicand = formRef.elements.endMultiplicand;
@@ -16,14 +16,23 @@ const tableDiv = document.getElementById("tableDiv");
 const genTableBttn = document.getElementById("genTableBttn");
 let currTable;
 
-// Even listener that listens to genTableBttn click and calls validateForm().
-genTableBttn.addEventListener("click", validateForm);
-
+/**
+ * Replaces the last child of the body which is currTable with the newly created table.
+ * 
+ * @param {Node} newTable The newly created table to replace the current table with.
+ * @return {Node} The new table
+ */
+function replaceTable(newTable){
+    tableDiv.replaceChild(newTable, currTable);
+    return newTable;
+}
 
 // Creates a multiplcation table and appends it to the body of the page.
 function createTable(){
 
-    // Parse each form element value into a Int to avoid manipulating strings.
+    /**
+     * Parse each form element value into a Int to avoid manipulating strings.
+     */
     const minRows = parseInt(elStartMultiplier.value);
     const maxRows = parseInt(elEndMultiplier.value);
     const minCols = parseInt(elStartMultiplicand.value);
@@ -35,8 +44,11 @@ function createTable(){
     // Create a table header for the multiplicands.
     let multiplicandHeader = table.createTHead();
     let multiplicandRow = multiplicandHeader.insertRow();
-    multiplicandRow.setAttribute("id", "multiplicandRow")
-    // Create a table body which will consist of the multipliers and products.
+    multiplicandRow.setAttribute("id", "multiplicandRow");
+    /**
+     * Create a table body which will consist of the multipliers 
+    *   and products.
+    * */
     let tableBody = document.createElement("tbody");
 
     // Create an empty corner in the header.
@@ -51,9 +63,13 @@ function createTable(){
     const numOfRows = Math.abs(maxRows - minRows);
     let startingColVal = minCols;
 
+    // i and j will be used for the upcoming for loops.
+    let i;
+    let j;
+
     // Create all the table headers based on max. columns.
-    for(var i = 0; i <= numOfCols; i++) {
-        let multiplicand = document.createElement("th");
+    for(i = 0; i <= numOfCols; i++) {
+        multiplicand = document.createElement("th");
         multiplicand.innerText = `${startingColVal}`;
         multiplicandRow.appendChild(multiplicand);
         startingColVal += 1;
@@ -63,12 +79,13 @@ function createTable(){
     let firstColOfRow = minRows;
 
     /**
-     * Create the table by going through each row and creating a column with the first column being the multiplier
-     * and the rest a product of the multiplier (represented by firstRowOfCol) and multiplicand. 
+     * Create the table by going through each row and creating a column with the 
+     * first column being the multiplier and the rest a product of the multiplier
+     * (represented by firstRowOfCol) and multiplicand. 
      */
-    for(var i = 0; i < numOfRows + 1; i++) {
+    for(i = 0; i < numOfRows + 1; i++) {
         let row = tableBody.insertRow();
-        for(var j = 1; j <= numOfCols + 1; j++) {
+        for(j = 1; j <= numOfCols + 1; j++) {
             // If j is 1, we are in the first column meaning this column is a multiplier
             if(j == 1){
                 let multiplier = document.createElement("th");
@@ -91,25 +108,13 @@ function createTable(){
      * If the currTable is not undefined, then replace the currTable with the newly created table by calling the function
      * replaceTable. 
      */
-    if(currTable == undefined){
+    if(currTable === undefined){
         currTable = tableDiv.appendChild(table);
     } else {
         currTable = replaceTable(table);
     }
 
     //console.log(table);
-}
-
-/**
- * Replaces the last child of the body which is currTable with the newly created table.
- * 
- * @param {Node} newTable The newly created table to replace the current table with.
- * @return {Node} The new table
- */
-function replaceTable(newTable){
-    console.log("in replaceTable");
-    tableDiv.replaceChild(newTable, currTable);
-    return newTable;
 }
 
 // Validates the user input. 
@@ -127,7 +132,7 @@ function validateForm(){
      *  Check if user inputted a non-number. If so, display an alert message by calling displayAlertMessage().
      *  Also, check if user inputted a number that is out of the (-50, 50) range.
      */
-    if(isNaN(startMultiplier) || isNaN(endMultiplier)|| isNaN(startMultiplicand) || isNaN(endMultiplicand)){
+    if(Number.isNaN(startMultiplier) || Number.isNaN(endMultiplier)|| Number.isNaN(startMultiplicand) || Number.isNaN(endMultiplicand)){
         error = true;
         document.getElementById("alertMessage").style.display = "block";
         document.getElementById("alertMessage").innerHTML = "Please enter numbers only.";
@@ -135,31 +140,37 @@ function validateForm(){
     } else if (startMultiplier < -50 || endMultiplier > 50 || startMultiplicand < -50 || endMultiplicand > 50){
         error = true;
         document.getElementById("alertMessage").style.display = "block";
-        document.getElementById("alertMessage").innerHTML = "One of the inputs has exceeded the range: -50 to 50.";
+        document.getElementById("alertMessage").innerHTML = 
+            "One of the inputs has exceeded the range: -50 to 50.";
     } 
 
+    let temp;
     // Exchange starting and ending values if start values are greater than end values.
     if(startMultiplier > endMultiplier){
-        let temp = startMultiplier;
+        temp = startMultiplier;
         elStartMultiplier.value = endMultiplier;
         elEndMultiplier.value= temp;
         swapped = true;
     }
 
     if(startMultiplicand > endMultiplicand){
-        let temp = startMultiplicand;
+        temp = startMultiplicand;
         elStartMultiplicand.value = endMultiplicand;
         elEndMultiplicand.value = temp;
         swapped = true;
     }
-    
+
     if(swapped){
         document.getElementById("alertMessage").style.display = "block";
-        document.getElementById("alertMessage").innerHTML = "Swapped input values to meet fulfill requirements";
+        document.getElementById("alertMessage").innerHTML = 
+            "Swapped input values to meet fulfill requirements";
     }
 
     // If no input errors are detected, create the table.
-    if(error == false){
+    if(error === false){
         createTable();
     }
 }
+
+// Even listener that listens to genTableBttn click and calls validateForm().
+genTableBttn.addEventListener("click", validateForm);
