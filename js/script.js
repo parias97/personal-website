@@ -135,14 +135,14 @@ function validateForm(){
     if(Number.isNaN(startMultiplier) || Number.isNaN(endMultiplier)|| Number.isNaN(startMultiplicand) || Number.isNaN(endMultiplicand)){
         error = true;
         document.getElementById("alertMessage").style.display = "block";
-        document.getElementById("alertMessage").innerHTML = "Please enter numbers only.";
+        document.getElementById("alertMessage").innerHTML = "Please enter numbers.";
 
     } else if (startMultiplier < -50 || endMultiplier > 50 || startMultiplicand < -50 || endMultiplicand > 50){
         error = true;
         document.getElementById("alertMessage").style.display = "block";
         document.getElementById("alertMessage").innerHTML = 
             "One of the inputs has exceeded the range: -50 to 50.";
-    } 
+    }
 
     let temp;
     // Exchange starting and ending values if start values are greater than end values.
