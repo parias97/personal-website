@@ -1,0 +1,144 @@
+<!--
+      Name: Peter Arias
+      Email: peter_arias@student.uml.edu
+      Affiliation: Student at UMass Lowell in 91.61 GUI Programming I
+      Date: 11/11/2020
+      Description: Using the jQuery Validation Plugin with Your Dynamic Table
+      91.461 Assignment: Assignment No. 6
+-->
+
+<!-- Using starting template from: https://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <!-- Specifies the character set for the page -->
+    <meta charset="utf-8">
+    <!-- Description of website -->
+    <meta name="description" content="Assignment index by Peter Arias">
+
+    <!-- Scales web page based on browser size. Source: w3schools -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+    <!-- Page document title -->
+    <title>Multiplication Table</title>
+
+    <!-- Link to favicon -->
+    <link rel="icon" type="image/png" href="./images/favicon.png"/>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Link to external CSS. -->
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- Linked stylesheet for icons. -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  </head>
+
+  <!-- Contains the page content -->
+  <body>
+    <!-- Navbar with logo and social media links. 
+         Source: https://getbootstrap.com/docs/4.0/components/navbar/ -->
+    <nav class="navbar navbar-expand-sm bg-nb navbar-dark">
+      <a class="navbar-brand" href="./">
+        <img src="./images/logo.png" alt="logo" class="navbar-brand image-responsive">
+      </a>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/parias97" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://linkedin.com/in/peterarias" target="_blank">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Jumbotron extends entire viewport to display a heading. -->
+    <!-- Source: https://getbootstrap.com/docs/3.4/components/#jumbotron-->
+    <div class="jumbotron jumbotron-fluid text-center bg-nb">
+      <div class="container">
+        <h1>Multiplication Table <i class=""></i> </h1>
+      </div>
+    </div>
+
+    <!-- Container for form. -->
+    <div class = "container">
+      <form id = "inputForm" onsubmit="return false">
+        <div class="form-group row">
+          <div class="col-sm-4">
+            <label for="startMultiplier" class="col-form-label float-sm-right">Starting multiplier:</label>
+          </div>
+          <div class="col-sm-4">
+            <input type = "number" name = "startMultiplier" id = "startMultiplier" class="form-control" placeholder = "Enter starting multiplier">
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-4">
+            <label for="endMultiplier" class="col-form-label float-sm-right">Ending multiplier:</label>
+          </div>
+          <div class="col-sm-4">
+            <input type = "number" name = "endMultiplier"  id = "endMultiplier" class="form-control" placeholder = "Enter ending multiplier"><br>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-4">
+            <label for="startMultiplicand" class="col-form-label float-sm-right">Starting multiplicand:</label>
+          </div>
+          <div class="col-sm-4">
+            <input type = "number" name = "startMultiplicand"  id = "startMultiplicand" class="form-control" placeholder = "Enter starting multiplicand"><br>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-4">
+            <label for="endMultiplicand" class="col-form-label float-sm-right">Ending multiplicand:</label>
+          </div>
+          <div class="col-sm-4">
+            <input type = "number" name = "endMultiplicand" id = "endMultiplicand" class="form-control" placeholder = "Enter ending multiplicand">
+          </div>
+        </div>
+        <div class="form-group row justify-content-center">
+          <div class="col-xs-3">
+            <button type = "submit" class = "btn btn-info btn-lg" id = "genTableBttn">Generate Table</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <br>
+
+    <!-- Contains an alert when there's an error. Made visible by Javascript.
+    <div id="alertMessage" class = "container alert alert-danger" role = "alert">
+    </div>-->
+
+    <!-- Displays the table. -->
+    <div id = "tableDiv" class = "container">
+
+    </div>
+
+    <footer class="page-footer font-small mt-5">
+      <div class="container text-center">
+        <p>Designed and built by Peter Arias</p>
+      </div>
+    </footer>
+
+    <script type="text/javascript" src="./js/script.js"></script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" 
+    integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh" 
+    crossorigin="anonymous"></script>
+    <script src="./js/form-validation.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js" 
+    integrity="sha384-6UVI3atWyL/qZbDIJb7HW8PyHhFNMiX5rYNY2gAYcaYJjYk5cNIQShSQPBleGMYu" 
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"></script>
+  </body>
+</html>
