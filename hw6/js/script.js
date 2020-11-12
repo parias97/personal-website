@@ -33,10 +33,10 @@ function createTable(){
     /**
      * Parse each form element value into a Int to avoid manipulating strings.
      */
-    const minRows = parseInt(elStartMultiplier.value);
-    const maxRows = parseInt(elEndMultiplier.value);
-    const minCols = parseInt(elStartMultiplicand.value);
-    const maxCols = parseInt(elEndMultiplicand.value);
+    const minRows = Number(elStartMultiplier.value);
+    const maxRows = Number(elEndMultiplier.value);
+    const minCols = Number(elStartMultiplicand.value);
+    const maxCols = Number(elEndMultiplicand.value);
 
     // Create a table element and set it an id.
     let table = document.createElement("table");
@@ -119,10 +119,10 @@ function createTable(){
 
 // Validates the user input. 
 function checkForSwap(){
-    let startMultiplier = parseInt(elStartMultiplier.value);
-    let endMultiplier = parseInt(elEndMultiplier.value);
-    let startMultiplicand = parseInt(elStartMultiplicand.value);
-    let endMultiplicand = parseInt(elEndMultiplicand.value);
+    let startMultiplier = Number(elStartMultiplier.value);
+    let endMultiplier = Number(elEndMultiplier.value);
+    let startMultiplicand = Number(elStartMultiplicand.value);
+    let endMultiplicand = Number(elEndMultiplicand.value);
     let swapped = false;
 
     //document.getElementById("alertMessage").style.display = "none";

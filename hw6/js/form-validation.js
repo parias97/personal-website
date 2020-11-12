@@ -8,35 +8,50 @@
 */
 
 $(document).ready(function() {
+
+    // Check if input is a whole number.
+    $.validator.addMethod("wholeNumber", function(value){
+        if((value % 1) == 0){
+            return true;
+        }else {
+            return false;
+        };
+    });
+
     var inputForm = document.getElementById("inputForm");
     // Initialize form validation on the input form
     $(inputForm).validate({
-
         // Rules object. Each input must follow the following rules.
         rules: {
             startMultiplier: {
                 required: true,
                 number: true,
                 max: 50,
-                min: -50
+                min: -50,
+                wholeNumber: true
             },
             endMultiplier: {
                 required: true,
                 number: true,
                 max: 50,
-                min: -50
+                min: -50,
+                wholeNumber: true
+
             },
             startMultiplicand: {
                 required: true,
                 number: true,
                 max: 50,
-                min: -50
+                min: -50,
+                wholeNumber: true
+
             },
             endMultiplicand: {
                 required: true,
                 number: true,
                 max: 50,
-                min: -50
+                min: -50,
+                wholeNumber: true
             }
         },
 
@@ -46,25 +61,30 @@ $(document).ready(function() {
                 required: "Please enter a starting multiplier",
                 number: "Please only enter numbers",
                 max: "Please enter a number less than 50",
-                min: "Please enter a number greater than -50"
+                min: "Please enter a number greater than -50",
+                wholeNumber: "Please enter a whole number"
             },
             endMultiplier: {
                 required: "Please enter an ending multiplier",
                 number: "Please only enter numbers",
                 max: "Please enter a number less than 50",
-                min: "Please enter a number greater than -50"
+                min: "Please enter a number greater than -50",
+                wholeNumber: "Please enter a whole number"
             },
             startMultiplicand:{
                required: "Please enter a starting multiplicand",
                number: "Please only enter numbers",
                max: "Please enter a number less than 50",
-               min: "Please enter a number greater than -50"
+               min: "Please enter a number greater than -50",
+               wholeNumber: "Please enter a whole number"
+
             },
             endMultiplicand: {
                 required: "Please enter an ending multiplicand",
                 number: "Please only enter numbers",
                 max: "Please enter a number less than 50",
-                min: "Please enter a number greater than -50"
+                min: "Please enter a number greater than -50",
+                wholeNumber: "Please enter a whole number"
             }
         },
         /* errorPlacement object. Place error message below the input field.
