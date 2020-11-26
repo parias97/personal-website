@@ -1,0 +1,109 @@
+/*
+      Name: Peter Arias
+      Email: peter_arias@student.uml.edu
+      Affiliation: Student at UMass Lowell in 91.61 GUI Programming I
+      Date: 11/26/2020
+      Description: Using the jQuery UI Slider and Tab Widgets
+      91.461 Assignment: Assignment No. 7
+*/
+
+
+* {
+    color: white;
+}
+
+body, html {
+    background-color: #0a192f;
+    height: 100%
+}
+
+.bg-nb{
+    background-color: #0a192f;
+}
+
+/* Make h1's slight larger than the regular font size. */
+h1 {
+    font-size:1.5rem;
+}
+
+.jumbotron{
+    background-color: #172a45;
+}
+
+/* Make h1 elements in the jumbotron double the regular font size. */
+.jumbotron h1 {
+    font-size: 2rem;
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+section hr {
+    margin-top: 0;
+}
+
+.color-mint {
+    background-color: #64ffda;  
+}
+
+.footer {
+    bottom: 0;
+}
+
+.card {
+    background-color: #172a45;
+    border-color: #64ffda;
+}
+
+nav i {
+    font-size: 36px;
+    color: #64ffda;
+}
+
+.hw-section a:link {
+    text-decoration: none;
+}
+
+/* Lowers opacity to 50% when hovering over a card. */
+.hw-section .card:hover{
+    opacity: 0.5;
+}
+
+/* Lowers opacity to 50% when hovering over a navbar fab icon. */
+.nav-item .fab:hover {
+    opacity: 0.5;
+}
+
+.errorMessage {
+    color: red;
+}
+
+/* Allow the ability to scroll if the multiplication table exceeds document size. */
+.multTable {
+    max-width: 50%;
+    max-height: 500px;
+    overflow: auto;
+}
+
+/* Styles the products */
+.multTable tbody > tr > td:not(:first-child) {
+    background-color: #172a45;
+    border: solid 1px #64ffda;
+}
+
+/* Styles the table header (multiplicands) and the first element of each row (multiplier). */
+.multTable thead > tr > th, tbody > tr > th{
+    background-color: #64ffda;
+    border: solid 1px #64ffda;
+    color: black;
+}
+
+.multTable td, th {
+    text-align: center;
+    padding: 3px 10px;
+}
+
+.sliderStyle {
+    margin-top: 1rem; 
+}

@@ -1,0 +1,159 @@
+<!--
+      Name: Peter Arias
+      Email: peter_arias@student.uml.edu
+      Affiliation: Student at UMass Lowell in 91.61 GUI Programming I
+      Date: 11/26/2020
+      Description: Using the jQuery UI Slider and Tab Widgets
+      91.461 Assignment: Assignment No. 7
+-->
+
+<!-- Using starting template from: https://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <!-- Specifies the character set for the page -->
+    <meta charset="utf-8">
+    <!-- Description of website -->
+    <meta name="description" content="Assignment index by Peter Arias">
+
+    <!-- Scales web page based on browser size. Source: w3schools -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+    <!-- Page document title -->
+    <title>Multiplication Table</title>
+
+    <!-- Link to favicon -->
+    <link rel="icon" type="image/png" href="./images/favicon.png"/>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Link to external CSS. -->
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <link rel="stylesheet" type="text/css" href="css/tabsTheme.css">
+
+    <!-- Linked stylesheet for icons. -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">  
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+  
+  </head>
+
+  <!-- Contains the page content -->
+  <body>
+    <!-- Navbar with logo and social media links. 
+         Source: https://getbootstrap.com/docs/4.0/components/navbar/ -->
+    <nav class="navbar navbar-expand-sm bg-nb navbar-dark">
+      <a class="navbar-brand" href="./">
+        <img src="./images/logo.png" alt="logo" class="navbar-brand image-responsive">
+      </a>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/parias97" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://linkedin.com/in/peterarias" target="_blank">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Jumbotron extends entire viewport to display a heading. -->
+    <!-- Source: https://getbootstrap.com/docs/3.4/components/#jumbotron-->
+    <div class="jumbotron jumbotron-fluid text-center bg-nb">
+      <div class="container">
+        <h1>Multiplication Table <i class=""></i> </h1>
+      </div>
+    </div>
+
+    <!-- Container for form. -->
+    <div class = "container">
+      <form id = "inputForm" onsubmit="return false">
+        <div class="form-group row">
+          <div class="col-sm-4">
+            <label for="startMultiplier" class="col-form-label float-sm-right">Starting multiplier:</label>
+          </div>
+          <div class="col-sm-4">
+            <input type = "text" name = "startMultiplier" id = "startMultiplier" onchange="autoSubmit()" class="form-control" placeholder = "Enter starting multiplier">
+            <div id="sliderStartMultiplier" class="sliderStyle"></div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-4">
+            <label for="endMultiplier" class="col-form-label float-sm-right">Ending multiplier:</label>
+          </div>
+          <div class="col-sm-4">
+            <input type = "text" name = "endMultiplier"  id = "endMultiplier" onchange="autoSubmit()" class="form-control" placeholder = "Enter ending multiplier">
+            <div id="sliderEndMultiplier" class="sliderStyle"></div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-4">
+            <label for="startMultiplicand" class="col-form-label float-sm-right">Starting multiplicand:</label>
+          </div>
+          <div class="col-sm-4">
+            <input type = "text" name = "startMultiplicand"  id = "startMultiplicand" onchange="autoSubmit()" class="form-control" placeholder = "Enter starting multiplicand">
+            <div id="sliderStartMultiplicand" class="sliderStyle"></div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-4">
+            <label for="endMultiplicand" class="col-form-label float-sm-right">Ending multiplicand:</label>
+          </div>
+          <div class="col-sm-4">
+            <input type = "text" name = "endMultiplicand" id = "endMultiplicand" onchange="autoSubmit()" class="form-control" placeholder = "Enter ending multiplicand">
+            <div id="sliderEndMultiplicand" class="sliderStyle"></div>
+          </div>
+        </div>
+        <div class="form-group row justify-content-center">
+          <div class="col-xs-3">
+            <button type = "submit" class = "btn btn-info btn-lg" id = "saveTableBttn">Save Table</button>
+            <button type = "button" class = "btn btn-info btn-lg" id = "closeAllTabs">Close All Tabs</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <br>
+
+    <!-- Container for dynamic table. -->
+    <div id="dynamicTableDiv" class="container multTable"></div>
+
+    <br>
+
+    <!-- Container for tabs. -->
+    <div id="tabs">
+      <ul>
+      </ul>
+    </div>
+
+    <footer class="page-footer font-small mt-5">
+      <div class="container text-center">
+        <p>Designed and built by Peter Arias</p>
+      </div>
+    </footer>
+
+    <!-- jQuery and jQuery UI -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <!-- jQuery Validation Plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js" 
+    integrity="sha384-6UVI3atWyL/qZbDIJb7HW8PyHhFNMiX5rYNY2gAYcaYJjYk5cNIQShSQPBleGMYu" 
+    crossorigin="anonymous"></script>
+    <!-- Local scripts -->
+    <script src="./js/script.js"></script>
+    <script src="./js/form-validation.js"></script>
+    <script src="./js/slider.js"></script>
+    <script src="./js/tabs.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"></script>
+    <!-- Bootstrap JS-->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"></script>
+  </body>
+</html>
