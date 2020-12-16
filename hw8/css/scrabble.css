@@ -1,0 +1,88 @@
+
+ /*   Name: Peter Arias
+      Email: peter_arias@student.uml.edu
+      Affiliation: Student at UMass Lowell in 91.61 GUI Programming I
+      Date: 12/15/2020
+      Description: Implementing a Bit of Scrabble with Drag-and-Drop
+      91.461 Assignment: Assignment #8 */
+
+.boardSlot {
+  margin-right: 5px;
+  padding-left: 3px;
+  width: 81px;
+  height: 87px;
+}
+
+.tile {
+  width: 71px;
+  height: 77px;
+  margin-right: 5px 
+}
+
+#gameContent {
+  margin: auto;
+}
+
+#board {
+  align-content: center;
+  justify-content: center;
+}
+
+#gameInfo {
+  align-content: center;
+  justify-content: center;
+}
+
+#gameButtons {
+  margin-top: 35px;
+  align-content: center;
+  justify-content: center;
+}
+
+#rack {
+  margin: auto;
+  width: 800px;
+  height: 100px;
+  align-content: center;
+  justify-content: center;
+  background-color: #172a45;
+  padding-top: 15px;
+  border-radius: 6px;
+  padding-top: 20px;
+  padding-bottom:20px;
+  border: solid 1px #64ffda;
+}
+
+#gameInfo {
+  display: flex;
+  background-color: #172a45;
+  align-content: center;
+  justify-content: space-evenly;
+  padding-top: 15px;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 500;
+  border-radius: 6px;
+  border: solid 1px #64ffda;
+}
+
+#gameButtons button {
+  margin: 20px;
+  background-color: #172a45;
+  border: solid 1px #64ffda;
+}
+
+#submitButton {
+  background-color: #172a45;
+  border: solid 1px#64ffda;
+}
+
+#submitButton:hover {
+  background-color: #173a70;
+}
+
+#newGameButton:hover {
+  background-color: #173a70;
+}
+
+

@@ -1,0 +1,104 @@
+<!--
+      Name: Peter Arias
+      Email: peter_arias@student.uml.edu
+      Affiliation: Student at UMass Lowell in 91.61 GUI Programming I
+      Date: 12/15/2020
+      Description: Implementing a Bit of Scrabble with Drag-and-Drop
+      91.461 Assignment: Assignment #8
+    -->
+
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <!-- Specifies the character set for the page -->
+    <meta charset="utf-8">
+    <!-- Description of website -->
+    <meta name="description" content="Assignment index by Peter Arias">
+
+    <!-- Scales web page based on browser size. Source: w3schools -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+    <!-- Page document title -->
+    <title>Peter Arias</title>
+
+    <!-- Link to favicon -->
+    <link rel="icon" type="image/png" href="./images/favicon.png"/>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Link to external CSS. -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/scrabble.css">
+
+  <!-- Linked stylesheet for icons. -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  </head>
+
+  <!-- Contains the page content -->
+  <body>
+    <!-- Navbar with logo and social media links. 
+         Source: https://getbootstrap.com/docs/4.0/components/navbar/ -->
+    <nav class="navbar navbar-expand-sm bg-nb navbar-dark">
+      <a class="navbar-brand" href="./">
+        <img src="./images/logo.png" alt="logo" class="navbar-brand image-responsive">
+      </a>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/parias97" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://linkedin.com/in/peterarias" target="_blank">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Jumbotron extends entire viewport to display a heading. -->
+    <!-- Source: https://getbootstrap.com/docs/3.4/components/#jumbotron-->
+    <div class="jumbotron jumbotron-fluid text-center bg-nb">
+      <div class="container">
+        <h1>Scrabble</h1>
+      </div>
+    </div>
+
+    <!-- Container for Scrabble game-->
+    <div id = "gameContent" class = "container">
+      <div id="gameInfo" class = "row">
+        <p>Score: <span id="score">0</span></p>
+        <p>Word: <span id="word"></span></p>
+        <p>Letters Remaining: <span id ="remainingLetters"></span></p>
+      </div>
+      <div id="board" class = "row"></div>
+      <br>
+      <div id="rack" class = "row"></div>
+      <div id="gameButtons" class = "row">
+        <button id="submitButton" type="button" class="btn btn-lg btn-primary btn-large">Submit Word</button>
+        <button id="newGameButton" type="button" class="btn btn-lg btn-primary">New Game</button>
+      </div>
+      </div>
+      </div>
+
+    <footer class="page-footer font-small mt-5">
+      <div class="container text-center">
+        <p>Designed and built by Peter Arias</p>
+      </div>
+    </footer>
+
+    <!-- jQuery and jQuery UI -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+
+    <!-- Popper.js and Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"></script>
+  </body>
+</html>
